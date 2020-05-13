@@ -1,7 +1,7 @@
 // 5 task
 const findMaxDate = (arr) => {
     const MaxDate = new Date(Math.max.apply(null, arr));
-    console.log(MaxDate);
+    return MaxDate;
 };
 const getDateArray = (start, end) => {
 
@@ -19,6 +19,6 @@ let endDate = new Date('2020-03-20');
 let arrDate = getDateArray(startDate, endDate);
 console.log(arrDate);
 
-findMaxDate(arrDate);
+const res = findMaxDate(arrDate);
 
-module.exports = findMaxDate;
+module.exports = res;

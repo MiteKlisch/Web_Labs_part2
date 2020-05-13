@@ -10,7 +10,7 @@ const addCustomer = (name, phone) => {
     return Customers.push( new Customer(name, phone));
 };
 
-const patchCustomer = (indexArr, name, phone) => {
+const patchCustomer = function (indexArr, name, phone) {
     Customers[indexArr].name = name;
     Customers[indexArr].phone = phone; 
 };
@@ -28,7 +28,7 @@ const findCustomer = (name) => {
     console.log(res);    
 };
 
-addCustomer('DSS', '666');
+addCustomer('DSS', '3123');
 addCustomer('Kola', 'asdas');
 addCustomer('Olya', '45544232');
 patchCustomer(1, 'Andrew', '12312');
