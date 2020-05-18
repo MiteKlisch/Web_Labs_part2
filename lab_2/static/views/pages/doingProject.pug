@@ -1,0 +1,38 @@
+extends ../layout.pug
+
+block prepend styles
+  link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+  div(class='breadcrumb')
+    li= title
+  form(id='doingProject-add-form' name='doingProject-add-form' class='form-inline' action='')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='doingProjectName') Name
+      div(class='col-md-9')
+        input(id='doingProjectName' name='doingProjectName' value='' class='form-control')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='perfomerProj') Perfomer
+      div(class='col-md-9')
+        input(id='perfomerProj' name='perfomerProj' value='' class='form-control')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='startDate') Start Date
+      div(class='col-md-9')
+        input(id='startDate' name='startDate' value='' class='form-control')
+    div(class='form-group')
+      div(class='col-md-3')
+        label(for='endDate') End Date
+      div(class='col-md-9')
+        input(id='endDate' name='endDate' value='' class='form-control')               
+    div(class='form-group')
+      div(class='col-md-12')
+        button(type='submit' class='btn btn-primary') Create
+    div.list-wrapper
+      table(id='doingProject-list')
+block append scripts
+  script(src='/static/js/models/doingProject.js')
+  script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+  script(src='/static/js/views/doingProject.js')
