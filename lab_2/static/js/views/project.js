@@ -25,7 +25,8 @@ function initListProject () {
     columns: [
       { title: 'ID', data: 'id' },
       { title: 'Project', data: 'projectName' },
-      { title: 'Owner', data: 'owner' }
+      { title: 'Owner', data: 'owner' },
+      { title: 'Short Description', data: 'description' }
     ]
   });
 }
