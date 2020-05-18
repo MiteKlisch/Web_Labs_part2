@@ -33,6 +33,10 @@ class BaseModel {// eslint-disable-line no-unused-vars
     Commit (collection) {
       localStorage.setItem(this.collectionName, JSON.stringify(collection));
     }
+
+    Undef (collection) {
+      localStorage.removeItem(JSON.stringify(collection));
+    }
     /**
      * @param {Number} id
      * @returns {BaseModel|undefined}
@@ -61,6 +65,26 @@ class BaseModel {// eslint-disable-line no-unused-vars
       }
   
       collection.push(entry);
+  
+      this.Commit(collection);
+  
+      const event = new CustomEvent(`${this.collectionName}ListDataChanged`, { detail: collection });
+      document.dispatchEvent(event);
+    }
+
+    Delete (row) {
+      const collection = this.Select();
+      const entry = this.GetEmpty();
+  
+      entry.id = this.FindById(collection);
+      for (const key in row) {
+        // eslint-disable-next-line no-prototype-builtins
+        if (entry.hasOwnProperty(key) && entry.key !== 'id') {
+          entry[key] = row[key];
+        }
+      }
+  
+      collection.splice(entry, entry);
   
       this.Commit(collection);
   

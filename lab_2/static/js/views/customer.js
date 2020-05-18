@@ -19,6 +19,23 @@ function initAddForm () {
   });
 }
 
+// function initDeleteForm () {
+//   const form = window.document.querySelector('#customer-add-form');
+//   form.addEventListener('submit', function (e) {
+//     e.preventDefault();
+
+//     const formData = new FormData(e.target);
+//     const customerData = {};
+//     formData.forEach((value, key) => {
+//       customerData[key] = value;
+//     });
+
+//     customerModel.Create(customerData);
+
+//     e.target.reset();
+//   });
+// }
+
 function initList () {
   window.jQuery('#customer-list').DataTable({
     data: customerModel.Select(),
@@ -40,9 +57,9 @@ function initListEvents () {
   }, false);
 }
 
-
 window.addEventListener('DOMContentLoaded', () => {
   initAddForm();
   initList();
   initListEvents();
+  // initDeleteForm();
 });
