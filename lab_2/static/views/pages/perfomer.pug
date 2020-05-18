@@ -6,29 +6,29 @@ block prepend styles
 block content
   div(class='breadcrumb')
     li= title
-  form(id='project-add-form' name='project-add-form' class='form-inline' action='')
+  form(id='perfomer-add-form' name='perfomer-add-form' class='form-inline' action='')
     div(class='form-group')
       div(class='col-md-3')
-        label(for='projectName') Project Name
+        label(for='namePerf') Name
       div(class='col-md-9')
-        input(id='projectName' name='projectName' value='' class='form-control')
+        input(id='namePerf' name='namePerf' value='' class='form-control')
     div(class='form-group')
       div(class='col-md-3')
-        label(for='owner') Owner
+        label(for='expirience') Expirience
       div(class='col-md-9')
-        input(id='owner' name='owner' value='' class='form-control')
+        input(id='expirience' name='expirience' value='' class='form-control')
     div(class='form-group')
       div(class='col-md-3')
-        label(for='description') Short Description
+        label(for='count') Count of workers
       div(class='col-md-9')
-        input(id='description' name='description' value='' class='form-control')            
+        input(id='count' name='count' value='' class='form-control')             
     div(class='form-group')
       div(class='col-md-12')
         button(type='submit' class='btn btn-primary') Create
     div.list-wrapper
-      table(id='project-list')
+      table(id='perfomer-list')
 block append scripts
-  script(src='/static/js/models/project.js')
+  script(src='/static/js/models/perfomer.js')
   script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
-  script(src='/static/js/views/project.js')
+  script(src='/static/js/views/perfomer.js')
       
