@@ -1,0 +1,34 @@
+extends ../layout
+
+block content 
+    h3 Вантаж на станціях
+    form(class="form-inline")
+        div(class="form-group")
+            label ID
+            input(type="number" class="form-control" id="inputId")
+        div(class="form-group")
+            label Станція
+            input(type="text" class="form-control" id="inputSpaceStation")
+        div(class="form-group")
+            label Вантаж
+            input(type="number" class="form-control" id="inputGoods")
+        button(type="submit" class="btn btn-primary" id="createGoodstoStationButton") Додати
+    table(id="goodstoStationsList" class="table table-bordered table-hover")
+        thead
+            th ID
+            th Станція
+            th Вантаж
+            th Видалити
+        tbody
+    button(type="submit" class="btn btn-primary" id="ShowLessThen30") Показати
+    table(id="goodstoStationsListLessThen30" class="table table-bordered table-hover")
+        thead
+            th(id="StationId") ID
+            th(id="StationName") Назва
+            th(id="StationNecessity") Необхідність
+            th(id="StationCapacity") Місткість
+            
+        tbody
+
+block append scripts
+    script(src='/public/js/GoodstoStations.js')
